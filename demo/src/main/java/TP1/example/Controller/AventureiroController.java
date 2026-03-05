@@ -18,16 +18,17 @@ public class AventureiroController {
     public List<Aventureiro> listar() {
         return  service.ListarTodos();
     }
-    @GetMapping("/{id}")
+    @GetMapping("aventureiros/{id}")
     public Aventureiro buscar(@PathVariable Long id) {
         return service.BuscarPorId(id);
     }
 
     @PostMapping
     public Aventureiro registrar(@RequestBody Aventureiro aventureiro) {
+        System.out.print("Aventureiro: " + aventureiro.getNome() + " Registrado!" );
         return service.Salvar(aventureiro);
     }
-    @DeleteMapping("/{id}")
+    @DeleteMapping("aventureiros/{id}")
     public void deletar(@PathVariable Long id) {
         service.Deletar(id);
     }

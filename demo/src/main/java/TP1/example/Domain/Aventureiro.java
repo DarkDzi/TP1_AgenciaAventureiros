@@ -26,7 +26,7 @@ public class Aventureiro {
     @Column(nullable = false)
     private StatusAventureiro status = StatusAventureiro.ATIVO;
 
-    @Column(nullable = false)
+
     private Companheiro companheiro;
 
 
