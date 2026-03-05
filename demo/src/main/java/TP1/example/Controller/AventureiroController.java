@@ -24,7 +24,7 @@ public class AventureiroController {
     }
 
     @PostMapping
-    public Aventureiro criar(@RequestBody Aventureiro aventureiro) {
+    public Aventureiro registrar(@RequestBody Aventureiro aventureiro) {
         return service.Salvar(aventureiro);
     }
     @DeleteMapping("/{id}")
@@ -32,3 +32,4 @@ public class AventureiroController {
         service.Deletar(id);
     }
 }
+//TODO Fazer pageamento
