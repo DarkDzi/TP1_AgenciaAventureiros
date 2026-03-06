@@ -27,13 +27,13 @@ public class AventureiroService {
             int size) {
         List<Aventureiro> lista = FakeDataBase.aventureiros;
         if(classe != null) {
-            lista.removeIf(a -> a.getClasse().equals(classe));
+            lista.removeIf(a -> a.getClasse() == classe);
         }
         if(status != null) {
-            lista.removeIf(a -> a.getStatus().equals(status));
+            lista.removeIf(a -> a.getStatus() == status);
         }
         if(nivelMin != null) {
-            lista.removeIf(a -> a.getNivel().equals(nivelMin));
+            lista.removeIf(a -> a.getNivel() >= nivelMin);
         }
         if(page < 0) page = 0;
         if(size < 0) size = 20;

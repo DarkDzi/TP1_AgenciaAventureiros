@@ -21,13 +21,38 @@ public class AventureiroController {
     }
     @GetMapping("/filtrar")
     public ResponseEntity<List<Aventureiro>> ListarFiltradoComPaginacao(
-            @RequestParam(required = false) Classe classe,
-            @RequestParam(required = false) StatusAventureiro status,
+            @RequestParam(required = false) String classe,
+            @RequestParam(required = false) String status,
             @RequestParam(required = false) Integer nivelMin,
             @RequestParam(defaultValue = "0") int page,
             @RequestParam(defaultValue = "10") int size
     ){
-        List<Aventureiro> list = service.listarComPaginacao(classe,status,nivelMin,page,size);
+        Classe classeEnum = null;
+        StatusAventureiro statusEnum = null;
+
+        if (classe != null) {
+            try {
+                classeEnum = Classe.valueOf(classe.trim().toUpperCase());
+            } catch (IllegalArgumentException e) {
+                System.out.println("Classe recebida: '" + classe + "'");
+                throw new RuntimeException("Classe inválida: " + classe);
+            }
+        }
+
+        if (status != null) {
+            try {
+                statusEnum = StatusAventureiro.valueOf(status.trim().toUpperCase());
+            } catch (IllegalArgumentException e) {
+                throw new RuntimeException("Status inválido: " + status);
+            }
+        }
+
+
+
+
+
+
+        List<Aventureiro> list = service.listarComPaginacao(classeEnum,statusEnum,nivelMin,page,size);
         int total = list.size();
         int totalpages = (int)Math.ceil((double) total/size);
         return ResponseEntity.ok()

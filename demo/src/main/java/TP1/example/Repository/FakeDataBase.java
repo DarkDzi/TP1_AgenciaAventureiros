@@ -17,7 +17,7 @@ public class FakeDataBase {
                      null,
                      StatusAventureiro.ATIVO,
                      1,
-                     Classe.Mago,
+                     Classe.MAGO,
                      "Aventureiro " + (i + 1),
                      sequence++
              );

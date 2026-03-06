@@ -1,5 +1,5 @@
 package TP1.example.Domain;
 
 public enum Classe {
-    Guerreiro, Mago, Arqueiro, Clerigo, Ladino
+    GUERREIRO, MAGO, ARQUEIRO, CLERIGO, LADINO
 }
