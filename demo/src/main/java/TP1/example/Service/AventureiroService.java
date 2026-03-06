@@ -17,6 +17,7 @@ import java.util.stream.Collectors;
 @Service
 @RequiredArgsConstructor
 public class AventureiroService {
+    //TODO Reduzir repetição de código aqui
     private final AventureiroRepository repository;
 
     public List<Aventureiro> ListarTodos() {
@@ -112,7 +113,7 @@ public class AventureiroService {
 //    public List<Aventureiro> ListarTodos() {
 //        return repository.findAll();
 //    }
-//    //TODO Implementar no Controller
+//
 //    public List<Aventureiro> ListarPorClasse(Classe classe){
 //        return repository.findByClasse(classe);
 //    }
@@ -131,7 +132,7 @@ public class AventureiroService {
 //    public void Deletar(Long id) {
 //        repository.deleteById(id);
 //    }
-//    //TODO Reduzir repetição de código aqui e implementar no controller
+//
 //    public void AtualizarNome(Long id, String nome){
 //        Optional<Aventureiro> aventureiroOpt = repository.findById(id);
 //        if(aventureiroOpt.isPresent()) {
